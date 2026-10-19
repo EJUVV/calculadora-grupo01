@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f4f4f6;
+    color: #1f2937;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.calculadora {
+    width: min(100%, 320px);
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(31, 41, 55, 0.08);
+}
+
+h1 {
+    margin: 0 0 16px;
+    color: #4c1d95;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#visor {
+    width: 100%;
+    height: 72px;
+    margin-bottom: 16px;
+    padding: 10px 14px;
+    border: 1px solid #ddd6fe;
+    border-radius: 10px;
+    outline: none;
+    background: #faf5ff;
+    color: #1f2937;
+    font: inherit;
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+    font-weight: 500;
+    text-align: right;
+    text-overflow: ellipsis;
+}
+
+#visor:focus-visible {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(5, 60px);
+    gap: 8px;
+}
+
+.botoes button {
+    min-width: 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #f9fafb;
+    color: #1f2937;
+    font: inherit;
+    font-size: 1.15rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.botoes button:hover {
+    background: #f3f4f6;
+}
+
+.botoes button:active {
+    transform: scale(0.96);
+}
+
+.botoes button:focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 2px;
+}
+
+.botoes .operador {
+    border-color: #ddd6fe;
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.botoes .operador:hover {
+    background: #ddd6fe;
+}
+
+.botoes .limpar {
+    background: #ffffff;
+    color: #7c3aed;
+}
+
+.botoes .limpar:hover {
+    background: #faf5ff;
+}
+
+.botoes .igual {
+    border-color: #6d28d9;
+    background: #7c3aed;
+    color: #ffffff;
+    font-size: 1.3rem;
+}
+
+.botoes .igual:hover {
+    background: #6d28d9;
+}
+
+.botoes button:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.botoes button:nth-child(2) {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.botoes button:nth-child(3) {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.botoes button:nth-child(4) {
+    grid-row: 1;
+    grid-column: 4;
+}
+
+.botoes button:nth-child(5) {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.botoes button:nth-child(6) {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.botoes button:nth-child(7) {
+    grid-row: 2;
+    grid-column: 3;
+}
+
+.botoes button:nth-child(8) {
+    grid-row: 2;
+    grid-column: 4;
+}
+
+.botoes button:nth-child(9) {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.botoes button:nth-child(10) {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.botoes button:nth-child(11) {
+    grid-row: 3;
+    grid-column: 3;
+}
+
+.botoes button:nth-child(12) {
+    grid-row: 3;
+    grid-column: 4;
+}
+
+.botoes button:nth-child(13) {
+    grid-row: 4;
+    grid-column: 1;
+}
+
+.botoes button:nth-child(14) {
+    grid-row: 4;
+    grid-column: 2;
+}
+
+.botoes button:nth-child(15) {
+    grid-row: 4;
+    grid-column: 3;
+}
+
+.botoes button:nth-child(16) {
+    grid-row: 4 / span 2;
+    grid-column: 4;
+}
+
+.botoes button:nth-child(17) {
+    grid-row: 5;
+    grid-column: 1 / span 2;
+}
+
+.botoes button:nth-child(18) {
+    grid-row: 5;
+    grid-column: 3;
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 12px;
+    }
+
+    .calculadora {
+        padding: 14px;
+    }
+
+    .botoes {
+        grid-template-rows: repeat(5, 54px);
+        gap: 6px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .botoes button {
+        transition: none;
+    }
+}
