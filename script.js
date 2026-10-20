@@ -69,3 +69,19 @@ function calcular() {
         resultadoExibido = true;
     }
 }
+document.addEventListener("keydown", function (event) {
+    const tecla = event.key;
+
+    if (/^[0-9]$/.test(tecla) || tecla === ".") {
+        adicionar(tecla);
+    } else if (["+", "-", "*", "/"].includes(tecla)) {
+        adicionar(tecla);
+    } else if (tecla === "Enter" || tecla === "=") {
+        event.preventDefault();
+        calcular();
+    } else if (tecla === "Backspace") {
+        apagar();
+    } else if (tecla === "Escape" || tecla === "Delete") {
+        limpar();
+    }
+});
